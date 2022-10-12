@@ -8,7 +8,7 @@ difference(){
         // Body
         color("Orange")
         union(){
-            roundedcube([100, 70, 30], true, 6);
+            roundedcube([110, 70, 30], true, 6);
             translate([0, -60, 0]) roundedcube([40, 100, 30], true, 6);
         }
 
