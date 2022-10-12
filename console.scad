@@ -17,7 +17,7 @@ difference(){
     }
     
     // Cylinder for thumbstick
-    translate([0, -50, 10]) cylinder(30, 10, 10, true);
+    translate([0, -50, 10]) cylinder(30, 11, 11, true);
 }
 
 
