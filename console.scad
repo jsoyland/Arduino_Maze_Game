@@ -1,43 +1,54 @@
 // Higher definition curves
 $fs = 0.01;
 
-
 difference(){//temporary - cut off back half
-    
-    
-    
-    difference(){ // Cut out interior
-        difference(){
-            //Take out cylinder for thumbstick   
-            difference(){
-                // Body
-                color("Orange")
-                union(){
-                    roundedcube([110, 70, 30], true, 6);
-                    translate([0, -60, 0]) roundedcube([40, 100, 30], true, 6);
-                }
 
-                //Screen Hole is 67mm x 50 mm 
-                translate([0, 0, 10]) cube([67, 50, 30], true);
+    difference(){//rounded corners on display hole
+        difference(){ // Cut out interior
+            difference(){  //subtract thumbstick hole  
+                difference(){ // subtract screen hole
+                    // Body
+                    union(){
+                        // Screen Box
+                        roundedcube([110, 70, 30], true, 6);
+                        // Handle
+                        translate([0, -75, 0]) roundedcube([40, 130, 30], true, 6);
+                    }
+
+                    //Screen Hole (67mm x 50 mm)
+                    translate([0, 0, 10]) cube([67.01, 50.01, 30], true);
+                }
+                
+                // Thumbstick hole
+                translate([0, -50, 10]) cylinder(30, 11, 11, true);
             }
             
-            // Cylinder for thumbstick
-            translate([0, -50, 10]) cylinder(30, 11, 11, true);
+            union(){ // Interior
+                translate([0, 0, 0]) cube([100,60,25], true);
+                translate([0, -75, 0]) cube([30,120,25], true);
+            }
         }
-        
-        union(){
-            translate([0, 0, 0]) cube([100,60,25], true);
-            translate([0, -60, 0]) cube([30,90,25], true);
+
+    // subtract rounded corners on display hole
+    translate([0 , 0, .01]) 
+        difference(){
+            difference(){
+                translate([0, 0, 14.5]) cube([69, 52, 1], true);
+                translate([0, 0, 14.5]) cube([67, 50, 1.1], true);
+            }
+            
+            union(){
+                translate([0, 26, 14]) rotate([90, 0, 90]) cylinder(70, 1, 1, true);
+                translate([0, -26, 14]) rotate([90, 0, 90]) cylinder(70, 1, 1, true);
+                translate([34.5, 0, 14]) rotate([90, 0, 0]) cylinder(52, 1, 1, true);
+                translate([-34.5, 0, 14]) rotate([90, 0, 0]) cylinder(52, 1, 1, true);
+            }
         }
     }
     
     
-    
-    
-    
-    
-    // temporary - cut off back half
-    translate([0, 0, -15]) cube([400, 400, 30], true);
+// temporary - cut off back half
+translate([0, 0, -15]) cube([400, 400, 30], true);
 }
 
 
