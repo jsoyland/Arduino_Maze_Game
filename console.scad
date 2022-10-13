@@ -2,24 +2,43 @@
 $fs = 0.01;
 
 
-difference(){
-    //Take out cylinder for thumbstick   
-    difference(){
-        // Body
-        color("Orange")
-        union(){
-            roundedcube([110, 70, 30], true, 6);
-            translate([0, -60, 0]) roundedcube([40, 100, 30], true, 6);
-        }
+difference(){//temporary - cut off back half
+    
+    
+    
+    difference(){ // Cut out interior
+        difference(){
+            //Take out cylinder for thumbstick   
+            difference(){
+                // Body
+                color("Orange")
+                union(){
+                    roundedcube([110, 70, 30], true, 6);
+                    translate([0, -60, 0]) roundedcube([40, 100, 30], true, 6);
+                }
 
-        //Screen Hole is 67mm x 50 mm 
-        translate([0, 0, 10]) cube([67, 50, 30], true);
+                //Screen Hole is 67mm x 50 mm 
+                translate([0, 0, 10]) cube([67, 50, 30], true);
+            }
+            
+            // Cylinder for thumbstick
+            translate([0, -50, 10]) cylinder(30, 11, 11, true);
+        }
+        
+        union(){
+            translate([0, 0, 0]) cube([100,60,25], true);
+            translate([0, -60, 0]) cube([30,90,25], true);
+        }
     }
     
-    // Cylinder for thumbstick
-    translate([0, -50, 10]) cylinder(30, 11, 11, true);
+    
+    
+    
+    
+    
+    // temporary - cut off back half
+    translate([0, 0, -15]) cube([400, 400, 30], true);
 }
-
 
 
 
