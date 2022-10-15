@@ -3,6 +3,7 @@ $fs = 0.01;
 
 difference(){//temporary - cut off back half
 
+union(){
     difference(){//rounded corners on display hole
         difference(){ // Cut out interior
             difference(){  //subtract thumbstick hole  
@@ -48,31 +49,35 @@ difference(){//temporary - cut off back half
         }
     }
     
+        // close off battery compartment - 52mm from edge of inside
+        translate([0, -75, 0]) cube([35, 2, 25], true);
+    
+        // Mounting holes for screen.  
+        // Height above base:  4.89mm
+        // Screw hole 3mm
+        translate([(110/2)-15, 0, 12.5-(4.89/2)]) 
+            difference(){
+                cube([5, 54, 4.89], true);
+                translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
+                translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
+            }
+
+
+        translate([-((110/2)-10), 0, 12.5-(4.89/2)]) 
+            difference(){
+                cube([5, 54, 4.89], true);
+                translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
+                translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
+            }
+}
+    
     
 // temporary - cut off back half
 translate([0, 0, -15]) cube([400, 400, 30], true);
 }
 
 
-// Mounting holes for screen.  
-// Height above base:  4.89mm
-// Screw hole 3mm
 
-
-translate([(110/2)-15, 0, 12.5-(4.89/2)]) 
-    difference(){
-        cube([5, 54, 4.89], true);
-        translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
-        translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
-    }
-
-
-translate([-((110/2)-10), 0, 12.5-(4.89/2)]) 
-    difference(){
-        cube([5, 54, 4.89], true);
-        translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
-        translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
-    }
 
 
 
