@@ -13,7 +13,7 @@ union(){
                         // Screen Box
                         roundedcube([110, 70, 30], true, 6);
                         // Handle
-                        translate([0, -75, 0]) roundedcube([40, 130, 30], true, 6);
+                        translate([0, -70, 0]) roundedcube([40, 130, 30], true, 6);
                     }
 
                     //Screen Hole (67mm x 50 mm)
@@ -28,7 +28,7 @@ union(){
                 //translate([0, 0, 0]) cube([105,64,25], true);
                 translate([0, 0, 0]) roundedcube([105, 65, 25], true, 6);
                 //translate([0, -75, 0]) cube([30,120,25], true);
-                translate([0, -75, 0]) roundedcube([35,125,25], true, 6);
+                translate([0, -70, 0]) roundedcube([35,125,25], true, 6);
             }
         }
 
@@ -83,7 +83,7 @@ translate([0, 0, -15]) cube([400, 400, 30], true);
 
 
 // temporary - battery
-// translate([0, -104, -5]) cube([26, 48, 17], true);
+ translate([0, -104, -5]) cube([26, 48, 17], true);
 
 
 
