@@ -24,8 +24,10 @@ difference(){//temporary - cut off back half
             }
             
             union(){ // Interior
-                translate([0, 0, 0]) cube([100,60,25], true);
-                translate([0, -75, 0]) cube([30,120,25], true);
+                //translate([0, 0, 0]) cube([105,64,25], true);
+                translate([0, 0, 0]) roundedcube([105, 65, 25], true, 6);
+                //translate([0, -75, 0]) cube([30,120,25], true);
+                translate([0, -75, 0]) roundedcube([35,125,25], true, 6);
             }
         }
 
@@ -50,6 +52,33 @@ difference(){//temporary - cut off back half
 // temporary - cut off back half
 translate([0, 0, -15]) cube([400, 400, 30], true);
 }
+
+
+// Mounting holes for screen.  
+// Height above base:  4.89mm
+// Screw hole 3mm
+
+
+translate([(110/2)-15, 0, 12.5-(4.89/2)]) 
+    difference(){
+        cube([5, 54, 4.89], true);
+        translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
+        translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
+    }
+
+
+translate([-((110/2)-10), 0, 12.5-(4.89/2)]) 
+    difference(){
+        cube([5, 54, 4.89], true);
+        translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
+        translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
+    }
+
+
+
+
+
+
 
 
 
