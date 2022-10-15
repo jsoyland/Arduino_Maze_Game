@@ -49,8 +49,13 @@ union(){
         }
     }
     
-        // close off battery compartment - 52mm from edge of inside
-        translate([0, -75, 0]) cube([35, 2, 25], true);
+        // close off battery compartment, but leave a 8x12mm hole for connector
+         translate([0, -75, 0]) difference(){
+           cube([35, 2, 25], true);
+           translate([8, 0, 6]) cube([8, 3, 11], true);
+         }
+            
+        
     
         // Mounting holes for screen.  
         // Height above base:  4.89mm
@@ -61,7 +66,6 @@ union(){
                 translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
                 translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
             }
-
 
         translate([-((110/2)-10), 0, 12.5-(4.89/2)]) 
             difference(){
@@ -78,7 +82,8 @@ translate([0, 0, -15]) cube([400, 400, 30], true);
 
 
 
-
+// temporary - battery
+// translate([0, -104, -5]) cube([26, 48, 17], true);
 
 
 
