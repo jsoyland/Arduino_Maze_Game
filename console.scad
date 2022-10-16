@@ -47,6 +47,22 @@ union(){
                 translate([-34.5, 0, 14]) rotate([90, 0, 0]) cylinder(52, 1, 1, true);
             }
         }
+        
+        
+        
+        
+        // screw holes for screen
+        translate([(110/2)-15, 0, 12.5-(3.43/2)]) {
+                translate([0, 49/2, 0]) cylinder(7, 1.5, 1.5, true);
+                translate([0, -49/2, 0]) cylinder(7, 1.5, 1.5, true);
+        }
+
+        translate([-((110/2)-10), 0, 12.5-(3.43/2)]) {
+                translate([0, 49/2, 0]) cylinder(7, 1.5, 1.5, true);
+                translate([0, -49/2, 0]) cylinder(7, 1.5, 1.5, true);
+        }
+        
+        
     }
     
         // close off battery compartment, but leave a 8x12mm hole for connector
@@ -57,7 +73,7 @@ union(){
             
         
     
-        // Mounting holes for screen.  
+        // Mounting blocks for screen.  
         // Height above base: 3.43 mm
         // Screw hole 3mm
         translate([(110/2)-15, 0, 12.5-(3.43/2)]) 
@@ -75,13 +91,39 @@ union(){
                 translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
                 cube([5.01, 43, 3.44], true);
             }
+            
+            
+            
+        // Mounting block for thumbstick
+        translate([0, -50, -(25-7)/2]) {
+            difference(){
+                cube([27, 36, 7], true);    
+                translate([20/2, (26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
+                translate([-20/2, (26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
+                translate([-20/2, -(26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
+                translate([20/2, -(26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
+                cube([27.01, 12.01, 7.01], true);
+                cube([12.01, 36.01, 7.01], true);
+            }
+        }
+            
+            
+            
 }
     
     
 // temporary - cut off back half
- translate([0, 0, -15]) cube([400, 400, 30], true);
+// translate([0, 0, -15]) cube([400, 400, 30], true);
 // temporary - cut off front half
-//translate([0, 0, 15]) cube([400, 400, 30], true);
+translate([0, 0, 15]) cube([400, 400, 30], true);
+
+// Temporary - cut off most of back
+//translate([0, 0, -8]) cube([400, 400, 30], true);
+
+// temporary - cut off bottom 
+//translate([0, -230, 0]) cube([400, 400, 400], true);
+
+
 }
 
 
@@ -95,7 +137,7 @@ union(){
 // * Rounded edge on thumbstick hole
 // * Hole for power switch
 // * Hole for Arduino access
-// screen holders were 1.46 too tall
+// The thumbstick needs to mount 18mm from the inside front
 
 
 
