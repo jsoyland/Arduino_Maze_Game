@@ -52,39 +52,50 @@ union(){
         // close off battery compartment, but leave a 8x12mm hole for connector
          translate([0, -75, 0]) difference(){
            cube([35, 2, 25], true);
-           translate([8, 0, 6]) cube([8, 3, 11], true);
+           translate([-8, 0, -6]) cube([8, 3, 11], true);
          }
             
         
     
         // Mounting holes for screen.  
-        // Height above base:  4.89mm
+        // Height above base: 3.43 mm
         // Screw hole 3mm
-        translate([(110/2)-15, 0, 12.5-(4.89/2)]) 
+        translate([(110/2)-15, 0, 12.5-(3.43/2)]) 
             difference(){
-                cube([5, 54, 4.89], true);
+                cube([5, 54, 3.43], true);
                 translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
                 translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
+                cube([5.01, 43, 3.44], true);
             }
 
-        translate([-((110/2)-10), 0, 12.5-(4.89/2)]) 
+        translate([-((110/2)-10), 0, 12.5-(3.43/2)]) 
             difference(){
-                cube([5, 54, 4.89], true);
+                cube([5, 54, 3.43], true);
                 translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
                 translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
+                cube([5.01, 43, 3.44], true);
             }
 }
     
     
 // temporary - cut off back half
-translate([0, 0, -15]) cube([400, 400, 30], true);
+ translate([0, 0, -15]) cube([400, 400, 30], true);
+// temporary - cut off front half
+//translate([0, 0, 15]) cube([400, 400, 30], true);
 }
 
 
 
 // temporary - battery
- translate([0, -104, -5]) cube([26, 48, 17], true);
+// translate([0, -104, -5]) cube([26, 48, 17], true);
 
+// Notes
+// * Maybe extend handle a bit for space to add screws
+// * battery compartment - smaller hole but crosses seam
+// * Rounded edge on thumbstick hole
+// * Hole for power switch
+// * Hole for Arduino access
+// screen holders were 1.46 too tall
 
 
 
