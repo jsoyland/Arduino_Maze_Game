@@ -120,8 +120,8 @@ union(){
             translate([-20/2, (26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
             translate([-20/2, -(26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
             translate([20/2, -(26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
-            cube([27.01, 12.01, 7.01], true);
-            cube([12.01, 36.01, 7.01], true);
+            translate([0, -2, 0]) cube([27.01, 18.01, 7.01], true);
+            translate([0, 0, 0]) cube([12.01, 36.01, 7.01], true);
         }
     }
     
