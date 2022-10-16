@@ -4,53 +4,44 @@ $fs = 0.01;
 difference(){//temporary - cut off back half
 
 union(){
-    difference(){//rounded corners on display hole
-        difference(){ // Cut out interior
-            difference(){  //subtract thumbstick hole  
-                difference(){ // subtract screen hole
-                    // Body
-                    union(){
-                        // Screen Box
-                        roundedcube([110, 70, 30], true, 6);
-                        // Handle
-                        translate([0, -70, 0]) roundedcube([40, 130, 30], true, 6);
-                    }
+    difference(){ 
+        // Body
+        union(){
+            // Screen Box
+            roundedcube([110, 70, 30], true, 6);
+            // Handle
+            translate([0, -70, 0]) roundedcube([40, 130, 30], true, 6);
+        }
 
-                    //Screen Hole (67mm x 50 mm)
-                    translate([0, 0, 10]) cube([67.01, 50.01, 30], true);
+        //Screen Hole (67mm x 50 mm)
+        translate([0, 0, 10]) cube([67.01, 50.01, 30], true);
+        
+        // Thumbstick hole
+        translate([0, -50, 10]) cylinder(30, 11, 11, true);
+        
+        union(){ // Interior
+            //translate([0, 0, 0]) cube([105,64,25], true);
+            translate([0, 0, 0]) roundedcube([105, 65, 25], true, 6);
+            //translate([0, -75, 0]) cube([30,120,25], true);
+            translate([0, -70, 0]) roundedcube([35,125,25], true, 6);
+        }
+            
+        // subtract rounded corners on display hole
+        translate([0 , 0, .01]) 
+            difference(){
+                difference(){
+                    translate([0, 0, 14.5]) cube([69, 52, 1], true);
+                    translate([0, 0, 14.5]) cube([67, 50, 1.1], true);
                 }
                 
-                // Thumbstick hole
-                translate([0, -50, 10]) cylinder(30, 11, 11, true);
-            }
-            
-            union(){ // Interior
-                //translate([0, 0, 0]) cube([105,64,25], true);
-                translate([0, 0, 0]) roundedcube([105, 65, 25], true, 6);
-                //translate([0, -75, 0]) cube([30,120,25], true);
-                translate([0, -70, 0]) roundedcube([35,125,25], true, 6);
-            }
+                union(){
+                    translate([0, 26, 14]) rotate([90, 0, 90]) cylinder(70, 1, 1, true);
+                    translate([0, -26, 14]) rotate([90, 0, 90]) cylinder(70, 1, 1, true);
+                    translate([34.5, 0, 14]) rotate([90, 0, 0]) cylinder(52, 1, 1, true);
+                    translate([-34.5, 0, 14]) rotate([90, 0, 0]) cylinder(52, 1, 1, true);
+                }
         }
 
-    // subtract rounded corners on display hole
-    translate([0 , 0, .01]) 
-        difference(){
-            difference(){
-                translate([0, 0, 14.5]) cube([69, 52, 1], true);
-                translate([0, 0, 14.5]) cube([67, 50, 1.1], true);
-            }
-            
-            union(){
-                translate([0, 26, 14]) rotate([90, 0, 90]) cylinder(70, 1, 1, true);
-                translate([0, -26, 14]) rotate([90, 0, 90]) cylinder(70, 1, 1, true);
-                translate([34.5, 0, 14]) rotate([90, 0, 0]) cylinder(52, 1, 1, true);
-                translate([-34.5, 0, 14]) rotate([90, 0, 0]) cylinder(52, 1, 1, true);
-            }
-        }
-        
-        
-        
-        
         // screw holes for screen
         translate([(110/2)-15, 0, 12.5-(3.43/2)]) {
                 translate([0, 49/2, 0]) cylinder(7, 1.5, 1.5, true);
@@ -61,54 +52,46 @@ union(){
                 translate([0, 49/2, 0]) cylinder(7, 1.5, 1.5, true);
                 translate([0, -49/2, 0]) cylinder(7, 1.5, 1.5, true);
         }
-        
-        
     }
     
-        // close off battery compartment, but leave a 8x12mm hole for connector
-         translate([0, -75, 0]) difference(){
-           cube([35, 2, 25], true);
-           translate([-8, 0, -6]) cube([8, 3, 11], true);
-         }
+    // close off battery compartment, but leave a 8x12mm hole for connector
+     translate([0, -75, 0]) difference(){
+       cube([35, 2, 25], true);
+       translate([-15, 0, 0]) cube([2, 3, 3], true);
+     }
             
-        
-    
-        // Mounting blocks for screen.  
-        // Height above base: 3.43 mm
-        // Screw hole 3mm
-        translate([(110/2)-15, 0, 12.5-(3.43/2)]) 
-            difference(){
-                cube([5, 54, 3.43], true);
-                translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
-                translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
-                cube([5.01, 43, 3.44], true);
-            }
+    // Mounting blocks for screen.  
+    // Height above base: 3.43 mm
+    // Screw hole 3mm
+    translate([(110/2)-15, 0, 12.5-(3.43/2)]) 
+        difference(){
+            cube([5, 54, 3.43], true);
+            translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
+            translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
+            cube([5.01, 43, 3.44], true);
+        }
 
-        translate([-((110/2)-10), 0, 12.5-(3.43/2)]) 
-            difference(){
-                cube([5, 54, 3.43], true);
-                translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
-                translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
-                cube([5.01, 43, 3.44], true);
-            }
-            
-            
-            
-        // Mounting block for thumbstick
-        translate([0, -50, -(25-7)/2]) {
-            difference(){
-                cube([27, 36, 7], true);    
-                translate([20/2, (26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
-                translate([-20/2, (26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
-                translate([-20/2, -(26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
-                translate([20/2, -(26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
-                cube([27.01, 12.01, 7.01], true);
-                cube([12.01, 36.01, 7.01], true);
-            }
+    translate([-((110/2)-10), 0, 12.5-(3.43/2)]) 
+        difference(){
+            cube([5, 54, 3.43], true);
+            translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
+            translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
+            cube([5.01, 43, 3.44], true);
         }
             
             
-            
+    // Mounting block for thumbstick
+    translate([0, -50, -(25-7)/2]) {
+        difference(){
+            cube([27, 36, 7], true);    
+            translate([20/2, (26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
+            translate([-20/2, (26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
+            translate([-20/2, -(26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
+            translate([20/2, -(26/2)-2, 0]) cylinder(9, 1.5, 1.5, true);
+            cube([27.01, 12.01, 7.01], true);
+            cube([12.01, 36.01, 7.01], true);
+        }
+    }
 }
     
     
