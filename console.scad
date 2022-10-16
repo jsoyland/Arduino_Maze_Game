@@ -20,9 +20,9 @@ union(){
         translate([0, -50, 10]) cylinder(30, 11, 11, true);
         
         union(){ // Interior
-            //translate([0, 0, 0]) cube([105,64,25], true);
+            //screen
             translate([0, 0, 0]) roundedcube([105, 65, 25], true, 6);
-            //translate([0, -75, 0]) cube([30,120,25], true);
+            //handle
             translate([0, -70, 0]) roundedcube([35,125,25], true, 6);
         }
             
@@ -52,6 +52,38 @@ union(){
                 translate([0, 49/2, 0]) cylinder(7, 1.5, 1.5, true);
                 translate([0, -49/2, 0]) cylinder(7, 1.5, 1.5, true);
         }
+        
+        
+        // screw holes for body
+        
+        translate([-29/2, -130, 0]) {
+            cylinder(27.01, 1.5, 1.5, true);
+            translate([0, 0, -14.5]) cylinder(2, 2.75, 2.75, true);
+        }
+        translate([29/2, -130, 0]) {
+            cylinder(27.01, 1.5, 1.5, true);
+            translate([0, 0, -14.5]) cylinder(2, 2.75, 2.75, true);
+        }
+        translate([100/2, 59/2, 0]) {
+            cylinder(27.01, 1.5, 1.5, true);
+            translate([0, 0, -14.5]) cylinder(8, 2.75, 2.75, true);
+        }
+        
+        translate([100/2, -59/2, 0]) {
+            cylinder(27.01, 1.5, 1.5, true);
+            translate([0, 0, -14.5]) cylinder(2, 2.75, 2.75, true);
+        }
+        
+        translate([-100/2, 59/2, 0]) {
+            cylinder(27.01, 1.5, 1.5, true);
+            translate([0, 0, -14.5]) cylinder(2, 2.75, 2.75, true);
+        }
+        
+        translate([-100/2, -59/2, 0]) {
+            cylinder(27.01, 1.5, 1.5, true);
+            translate([0, 0, -14.5]) cylinder(2, 2.75, 2.75, true);
+        }
+ 
     }
     
     // close off battery compartment, but leave a 8x12mm hole for connector
@@ -92,19 +124,53 @@ union(){
             cube([12.01, 36.01, 7.01], true);
         }
     }
+    
+    // Body Screws - Whatever it's called, the bits that hold the halves together.
+    translate([-29/2, -130, 0]) difference(){
+        cube([5, 5, 26], true);
+        cylinder(26.1, 1.5, 1.5, true);
+    }
+    translate([29/2, -130, 0]) difference(){
+        cube([5, 5, 26], true);
+        cylinder(26.1, 1.5, 1.5, true);
+    }
+  
+    translate([100/2, 59/2, 0]) difference(){
+        cube([5, 5, 26], true);
+        cylinder(26.1, 1.5, 1.5, true);
+    }
+    
+    translate([100/2, -59/2, 0]) difference(){
+        cube([5, 5, 26], true);
+        cylinder(26.1, 1.5, 1.5, true);
+    }
+    
+    translate([-100/2, 59/2, 0]) difference(){
+        cube([5, 5, 26], true);
+        cylinder(26.1, 1.5, 1.5, true);
+    }
+    
+    translate([-100/2, -59/2, 0]) difference(){
+        cube([5, 5, 26], true);
+        cylinder(26.1, 1.5, 1.5, true);
+    }
+    
 }
     
     
 // temporary - cut off back half
 // translate([0, 0, -15]) cube([400, 400, 30], true);
 // temporary - cut off front half
-translate([0, 0, 15]) cube([400, 400, 30], true);
+ translate([0, 0, 15]) cube([400, 400, 30], true);
 
 // Temporary - cut off most of back
 //translate([0, 0, -8]) cube([400, 400, 30], true);
 
 // temporary - cut off bottom 
 //translate([0, -230, 0]) cube([400, 400, 400], true);
+
+// temporary - cut off top
+//translate([0, 175, 0]) cube([400, 400, 400], true);
 
 
 }
