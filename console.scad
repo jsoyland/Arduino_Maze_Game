@@ -21,6 +21,7 @@ union(){
         
         union(){ // Interior
             //screen
+            //translate([0, 0, 0]) roundedcube([105, 65, 25], true, 6);
             translate([0, 0, 0]) roundedcube([105, 65, 25], true, 6);
             //handle
             translate([0, -70, 0]) roundedcube([35,125,25], true, 6);
@@ -53,7 +54,7 @@ union(){
                 translate([0, -49/2, 0]) cylinder(7, 1.5, 1.5, true);
         }
         
-        
+       
         // screw holes for body
         
         translate([-29/2, -130, 0]) {
@@ -95,20 +96,20 @@ union(){
     // Mounting blocks for screen.  
     // Height above base: 3.43 mm
     // Screw hole 3mm
-    translate([(110/2)-15, 0, 12.5-(3.43/2)]) 
+    translate([(110/2)-15, 0, 12.5-(4.94/2)]) 
         difference(){
-            cube([5, 54, 3.43], true);
-            translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
-            translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
-            cube([5.01, 43, 3.44], true);
+            cube([5.00, 54, 4.93], true);
+            translate([0, 49/2, 0]) cylinder(6, 1.5, 1.5, true);
+            translate([0, -49/2, 0]) cylinder(6, 1.5, 1.5, true);
+            cube([5.01, 43, 4.94], true);
         }
 
-    translate([-((110/2)-10), 0, 12.5-(3.43/2)]) 
+    translate([-((110/2)-10), 0, 12.5-(4.94/2)]) 
         difference(){
-            cube([5, 54, 3.43], true);
-            translate([0, 49/2, 0]) cylinder(5, 1.5, 1.5, true);
-            translate([0, -49/2, 0]) cylinder(5, 1.5, 1.5, true);
-            cube([5.01, 43, 3.44], true);
+            cube([5.00, 54, 4.93], true);
+            translate([0, 49/2, 0]) cylinder(6, 1.5, 1.5, true);
+            translate([0, -49/2, 0]) cylinder(6, 1.5, 1.5, true);
+            cube([5.01, 43, 4.94], true);
         }
             
             
@@ -127,31 +128,31 @@ union(){
     
     // Body Screws - Whatever it's called, the bits that hold the halves together.
     translate([-29/2, -130, 0]) difference(){
-        cube([5, 5, 26], true);
+        cube([5, 5, 25.5], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     translate([29/2, -130, 0]) difference(){
-        cube([5, 5, 26], true);
+        cube([5, 5, 25.5], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
   
     translate([100/2, 59/2, 0]) difference(){
-        cube([5, 5, 26], true);
+        cube([5, 5, 25.5], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     
     translate([100/2, -59/2, 0]) difference(){
-        cube([5, 5, 26], true);
+        cube([5, 5, 25.5], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     
     translate([-100/2, 59/2, 0]) difference(){
-        cube([5, 5, 26], true);
+        cube([5, 5, 25.5], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     
     translate([-100/2, -59/2, 0]) difference(){
-        cube([5, 5, 26], true);
+        cube([5, 5, 25.5], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     
@@ -159,15 +160,15 @@ union(){
     
     
 // temporary - cut off back half
-// translate([0, 0, -15]) cube([400, 400, 30], true);
+ translate([0, 0, -15]) cube([400, 400, 30], true);
 // temporary - cut off front half
- translate([0, 0, 15]) cube([400, 400, 30], true);
+// translate([0, 0, 15]) cube([400, 400, 30], true);
 
 // Temporary - cut off most of back
 //translate([0, 0, -8]) cube([400, 400, 30], true);
 
 // temporary - cut off bottom 
-//translate([0, -230, 0]) cube([400, 400, 400], true);
+translate([0, -233, 0]) cube([400, 400, 400], true);
 
 // temporary - cut off top
 //translate([0, 175, 0]) cube([400, 400, 400], true);
