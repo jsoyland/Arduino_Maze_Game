@@ -22,7 +22,7 @@ union(){
         union(){ // Interior
             //screen
             //translate([0, 0, 0]) roundedcube([105, 65, 25], true, 6);
-            translate([0, 0, 0]) roundedcube([105, 65, 25], true, 6);
+            translate([0, 0, 0]) roundedcube([105, 65, 25], true, 2);
             //handle
             translate([0, -70, 0]) roundedcube([35,125,25], true, 6);
         }
