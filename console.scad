@@ -98,20 +98,20 @@ union(){
     // Screw hole 3mm  
     translate([(110/2)-15, 0, 12.5-(4.94/2)]) 
         difference(){
-            cube([5.00, 54, 4.93], true);
-            translate([0, 49/2, 0]) cylinder(6, 1.5, 1.5, true);
-            translate([0, -49/2, 0]) cylinder(6, 1.5, 1.5, true);
-            cube([5.01, 43, 4.94], true);
+            cube([5.00, 55, 4.93], true);
+            translate([0, 50/2, 0]) cylinder(6, 1.5, 1.5, true);
+            translate([0, -50/2, 0]) cylinder(6, 1.5, 1.5, true);
+            cube([5.01, 44, 4.94], true);
         }
         
     translate([-((110/2)-10.01), 0, 12.5-(4.94/2)]) 
         // Bizzarely adding .01mm to x here addresses an 
         // "Object may not be a valid 2-manifold and may need repair!" error
         difference(){
-            cube([5.00, 54, 4.93], true);
-            translate([0, 49/2, 0]) cylinder(6, 1.5, 1.5, true);
-            translate([0, -49/2, 0]) cylinder(6, 1.5, 1.5, true);
-            cube([5.01, 43, 4.94], true);
+            cube([5.00, 55, 4.93], true);
+            translate([0, 50/2, 0]) cylinder(6, 1.5, 1.5, true);
+            translate([0, -50/2, 0]) cylinder(6, 1.5, 1.5, true);
+            cube([5.01, 44, 4.94], true);
         }
      
 /*
