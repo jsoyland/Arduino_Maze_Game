@@ -8,7 +8,7 @@ union(){
         // Body
         union(){
             // Screen Box
-            roundedcube([110, 70, 30], true, 6);
+            roundedcube([112, 70, 30], true, 6);
             // Handle
             translate([0, -70, 0]) roundedcube([40, 130, 30], true, 6);
         }
@@ -22,7 +22,7 @@ union(){
         union(){ // Interior
             //screen
             //translate([0, 0, 0]) roundedcube([105, 65, 25], true, 6);
-            translate([0, 0, 0]) roundedcube([105, 65, 25], true, 2);
+            translate([0, 0, 0]) roundedcube([107, 65, 25], true, 2);
             //handle
             translate([0, -70, 0]) roundedcube([35,125,25], true, 6);
         }
@@ -57,30 +57,30 @@ union(){
        
         // screw holes for body
         
-        translate([-29/2, -130, 0]) {
+        translate([-30/2, -130, 0]) {
             cylinder(27.01, 1.5, 1.5, true);
             translate([0, 0, -14.5]) cylinder(2, 2.75, 2.75, true);
         }
-        translate([29/2, -130, 0]) {
+        translate([30/2, -130, 0]) {
             cylinder(27.01, 1.5, 1.5, true);
             translate([0, 0, -14.5]) cylinder(2, 2.75, 2.75, true);
         }
-        translate([100/2, 59/2, 0]) {
+        translate([102/2, 60/2, 0]) {
             cylinder(27.01, 1.5, 1.5, true);
             translate([0, 0, -14.5]) cylinder(8, 2.75, 2.75, true);
         }
         
-        translate([100/2, -59/2, 0]) {
+        translate([102/2, -60/2, 0]) {
             cylinder(27.01, 1.5, 1.5, true);
             translate([0, 0, -14.5]) cylinder(2, 2.75, 2.75, true);
         }
         
-        translate([-100/2, 59/2, 0]) {
+        translate([-102/2, 60/2, 0]) {
             cylinder(27.01, 1.5, 1.5, true);
             translate([0, 0, -14.5]) cylinder(2, 2.75, 2.75, true);
         }
         
-        translate([-100/2, -59/2, 0]) {
+        translate([-102/2, -60/2, 0]) {
             cylinder(27.01, 1.5, 1.5, true);
             translate([0, 0, -14.5]) cylinder(2, 2.75, 2.75, true);
         }
@@ -96,22 +96,22 @@ union(){
     // Mounting blocks for screen.  
     // Height above base: 3.43 mm
     // Screw hole 3mm  
-    translate([(110/2)-15, 0, 12.5-(4.94/2)]) 
+    translate([(110/2)-15, 0, 12.5-(5.44/2)]) 
         difference(){
-            cube([5.00, 55, 4.93], true);
+            cube([5.00, 55, 5.43], true);
             translate([0, 50/2, 0]) cylinder(6, 1.5, 1.5, true);
             translate([0, -50/2, 0]) cylinder(6, 1.5, 1.5, true);
-            cube([5.01, 44, 4.94], true);
+            cube([5.01, 44, 5.44], true);
         }
         
-    translate([-((110/2)-10.01), 0, 12.5-(4.94/2)]) 
+    translate([-((110/2)-10.01), 0, 12.5-(5.44/2)]) 
         // Bizzarely adding .01mm to x here addresses an 
         // "Object may not be a valid 2-manifold and may need repair!" error
         difference(){
-            cube([5.00, 55, 4.93], true);
+            cube([5.00, 55, 5.43], true);
             translate([0, 50/2, 0]) cylinder(6, 1.5, 1.5, true);
             translate([0, -50/2, 0]) cylinder(6, 1.5, 1.5, true);
-            cube([5.01, 44, 4.94], true);
+            cube([5.01, 44, 5.44], true);
         }
      
 /*
@@ -138,32 +138,32 @@ union(){
     }
     
     // Body Screws - Whatever it's called, the bits that hold the halves together.
-    translate([-29/2, -130, 0]) difference(){
-        cube([5, 5, 25.5], true);
+    translate([-30/2, -130, 0]) difference(){
+        cube([5, 5, 24.5], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
-    translate([29/2, -130, 0]) difference(){
-        cube([5, 5, 25.5], true);
+    translate([30/2, -130, 0]) difference(){
+        cube([5, 5, 25], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
   
-    translate([100/2, 59/2, 0]) difference(){
-        cube([5, 5, 25.5], true);
+    translate([102/2, 60/2, 0]) difference(){
+        cube([5, 5, 24.5], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     
-    translate([100/2, -59/2, 0]) difference(){
-        cube([5, 5, 25.5], true);
+    translate([102/2, -60/2, 0]) difference(){
+        cube([5, 5, 25], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     
-    translate([-100/2, 59/2, 0]) difference(){
-        cube([5, 5, 25.5], true);
+    translate([-102/2, 60/2, 0]) difference(){
+        cube([5, 5, 25], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     
-    translate([-100/2, -59/2, 0]) difference(){
-        cube([5, 5, 25.5], true);
+    translate([-102/2, -60/2, 0]) difference(){
+        cube([5, 5, 25], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     
