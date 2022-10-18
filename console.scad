@@ -96,22 +96,22 @@ union(){
     // Mounting blocks for screen.  
     // Height above base: 3.43 mm
     // Screw hole 3mm  
-    translate([(110/2)-15, 0, 12.5-(5.44/2)]) 
+    translate([(110/2)-15, 0, 12.5-(4.44/2)]) 
         difference(){
-            cube([5.00, 55, 5.43], true);
+            cube([5.00, 55, 4.43], true);
             translate([0, 50/2, 0]) cylinder(6, 1.5, 1.5, true);
             translate([0, -50/2, 0]) cylinder(6, 1.5, 1.5, true);
-            cube([5.01, 44, 5.44], true);
+            cube([5.01, 44, 4.44], true);
         }
         
-    translate([-((110/2)-10.01), 0, 12.5-(5.44/2)]) 
+    translate([-((110/2)-10.01), 0, 12.5-(4.44/2)]) 
         // Bizzarely adding .01mm to x here addresses an 
         // "Object may not be a valid 2-manifold and may need repair!" error
         difference(){
-            cube([5.00, 55, 5.43], true);
+            cube([5.00, 55, 4.43], true);
             translate([0, 50/2, 0]) cylinder(6, 1.5, 1.5, true);
             translate([0, -50/2, 0]) cylinder(6, 1.5, 1.5, true);
-            cube([5.01, 44, 5.44], true);
+            cube([5.01, 44, 4.44], true);
         }
      
 /*
