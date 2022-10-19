@@ -116,19 +116,33 @@ union(){
         
       // Standoffs for circuit boards.  Trying cylinders
       circuit_board_standoff_height=6.5;
-      translate([-(65/2)+4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
+      translate([-(64/2)+4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
         difference(){
             union(){
-                translate([-36/2, 56/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                translate([-36/2, -56/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                translate([36/2, 56/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                translate([36/2, -56/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([-37/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([-37/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
             }
-            translate([-36/2, 56/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([-36/2, -56/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([36/2, 56/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([36/2, -56/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
         }  
+        
+      translate([(64/2)-4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
+        difference(){
+            union(){
+                translate([-37/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([-37/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+            }
+            translate([-37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+        } 
         
         
      
@@ -191,7 +205,7 @@ union(){
 // temporary - cut off back half
 //translate([0, 0, -15]) cube([400, 400, 30], true);
 // temporary - cut off front half
-// translate([0, 0, 15]) cube([400, 400, 30], true);
+ translate([0, 0, 15]) cube([400, 400, 30], true);
 
 // Temporary - cut off most of back
 //translate([0, 0, -8]) cube([400, 400, 30], true);
