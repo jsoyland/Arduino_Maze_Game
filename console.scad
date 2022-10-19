@@ -17,7 +17,7 @@ union(){
         translate([0, 0, 10]) cube([67.01, 50.01, 30], true);
         
         // Thumbstick hole
-        translate([0, -50, 10]) cylinder(30, 11, 11, true);
+        translate([0, -52, 10]) cylinder(30, 11, 11, true);
         
         union(){ // Interior
             //screen
@@ -116,7 +116,6 @@ union(){
         
       // Standoffs for circuit boards.  Trying cylinders
       circuit_board_standoff_height=6.5;
-        
       translate([-(65/2)+4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
         difference(){
             union(){
@@ -125,13 +124,10 @@ union(){
                 translate([36/2, 56/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
                 translate([36/2, -56/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
             }
-            //cube([40.00, 60, 25-16.72], true);
             translate([-36/2, 56/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
             translate([-36/2, -56/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
             translate([36/2, 56/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
             translate([36/2, -56/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            //cube([30.00, 61, 25-16], true);
-            //cube([41.00, 52, 25-16], true);
         }  
         
         
@@ -195,19 +191,19 @@ union(){
 // temporary - cut off back half
 //translate([0, 0, -15]) cube([400, 400, 30], true);
 // temporary - cut off front half
- translate([0, 0, 15]) cube([400, 400, 30], true);
+// translate([0, 0, 15]) cube([400, 400, 30], true);
 
 // Temporary - cut off most of back
 //translate([0, 0, -8]) cube([400, 400, 30], true);
 
 // temporary - cut off bottom 
-translate([0, -120, 0]) cube([120, 170, 40], true);
+//translate([0, -120, 0]) cube([120, 170, 40], true);
 
 // temporary - cut off top
 //translate([0, 175, 0]) cube([400, 400, 400], true);
 
 // temporary - cut off right side
-translate([60, -50, 0]) cube([120, 170, 40], true);
+//translate([60, -50, 0]) cube([120, 170, 40], true);
 
 
 }
