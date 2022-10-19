@@ -114,21 +114,22 @@ union(){
             cube([5.01, 44, 4.44], true);
         }
         
-      
-      // Mounting Blocks For circuit Boards.  Trying cylinders
-      translate([-(65/2)+4, 0, -(25-16.72)]) 
+      // Standoffs for circuit boards.  Trying cylinders
+      circuit_board_standoff_height=6.5;
+        
+      translate([-(65/2)+4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
         difference(){
             union(){
-                translate([-36/2, 56/2, 0]) cylinder(25-16.72, 2, 2, true);
-                translate([-36/2, -56/2, 0]) cylinder(25-16.72, 2, 2, true);
-                translate([36/2, 56/2, 0]) cylinder(25-16.72, 2, 2, true);
-                translate([36/2, -56/2, 0]) cylinder(25-16.72, 2, 2, true);
+                translate([-36/2, 56/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([-36/2, -56/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([36/2, 56/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([36/2, -56/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
             }
             //cube([40.00, 60, 25-16.72], true);
-            translate([-36/2, 56/2, 0]) cylinder(25-16, 1, 1, true);
-            translate([-36/2, -56/2, 0]) cylinder(25-16, 1, 1, true);
-            translate([36/2, 56/2, 0]) cylinder(25-16, 1, 1, true);
-            translate([36/2, -56/2, 0]) cylinder(25-16, 1, 1, true);
+            translate([-36/2, 56/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-36/2, -56/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([36/2, 56/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([36/2, -56/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
             //cube([30.00, 61, 25-16], true);
             //cube([41.00, 52, 25-16], true);
         }  
