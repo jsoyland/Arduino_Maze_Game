@@ -113,6 +113,27 @@ union(){
             translate([0, -50/2, 0]) cylinder(6, 1.5, 1.5, true);
             cube([5.01, 44, 4.44], true);
         }
+        
+      
+      // Mounting Blocks For circuit Boards.  Trying cylinders
+      translate([-(65/2)+4, 0, -(25-16.72)]) 
+        difference(){
+            union(){
+                translate([-36/2, 56/2, 0]) cylinder(25-16.72, 2, 2, true);
+                translate([-36/2, -56/2, 0]) cylinder(25-16.72, 2, 2, true);
+                translate([36/2, 56/2, 0]) cylinder(25-16.72, 2, 2, true);
+                translate([36/2, -56/2, 0]) cylinder(25-16.72, 2, 2, true);
+            }
+            //cube([40.00, 60, 25-16.72], true);
+            translate([-36/2, 56/2, 0]) cylinder(25-16, 1, 1, true);
+            translate([-36/2, -56/2, 0]) cylinder(25-16, 1, 1, true);
+            translate([36/2, 56/2, 0]) cylinder(25-16, 1, 1, true);
+            translate([36/2, -56/2, 0]) cylinder(25-16, 1, 1, true);
+            //cube([30.00, 61, 25-16], true);
+            //cube([41.00, 52, 25-16], true);
+        }  
+        
+        
      
 /*
     translate([-((110/2)-10), 0, 12.5-(4.94/2)]) 
@@ -171,18 +192,21 @@ union(){
     
     
 // temporary - cut off back half
-translate([0, 0, -15]) cube([400, 400, 30], true);
+//translate([0, 0, -15]) cube([400, 400, 30], true);
 // temporary - cut off front half
-// translate([0, 0, 15]) cube([400, 400, 30], true);
+ translate([0, 0, 15]) cube([400, 400, 30], true);
 
 // Temporary - cut off most of back
 //translate([0, 0, -8]) cube([400, 400, 30], true);
 
 // temporary - cut off bottom 
-translate([0, -233, 0]) cube([400, 400, 400], true);
+translate([0, -120, 0]) cube([120, 170, 40], true);
 
 // temporary - cut off top
 //translate([0, 175, 0]) cube([400, 400, 400], true);
+
+// temporary - cut off right side
+translate([60, -50, 0]) cube([120, 170, 40], true);
 
 
 }
