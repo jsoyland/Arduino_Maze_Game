@@ -92,10 +92,10 @@ union(){
  
     }
     
-    // close off battery compartment, but leave a 8x12mm hole for connector
+    // close off battery compartment, but leave a 2x3mm hole for connector
      translate([0, -75, 0]) difference(){
        cube([35, 2, 25], true);
-       translate([-15, 0, 0]) cube([2, 3, 3], true);
+       translate([-15, 0, -7]) cube([2, 3, 3], true);
      }
             
     // Mounting blocks for screen.  
