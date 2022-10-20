@@ -67,7 +67,7 @@ union(){
         }
         translate([102/2, 60/2, 0]) {
             cylinder(27.01, 1.5, 1.5, true);
-            translate([0, 0, -14.5]) cylinder(8, 2.75, 2.75, true);
+            translate([0, 0, -14.5]) cylinder(2, 2.75, 2.75, true);
         }
         
         translate([102/2, -60/2, 0]) {
@@ -89,7 +89,7 @@ union(){
         translate([-33, 35, 1]){
             cube([12, 10, 8.5], true);
         }
- 
+        
     }
     
     // close off battery compartment, but leave a 2x3mm hole for connector
@@ -134,21 +134,22 @@ union(){
             translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
             translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
         }  
-        
-      translate([(64/2)-4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
-        difference(){
-            union(){
-                translate([-37/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                translate([-37/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-            }
-            translate([-37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([-37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-        } 
-        
+  
+      translate([(64/2)-9, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
+      rotate([0, 0, 90]){ // Need to rotate this side to make it fit the arduino & plug
+            difference(){
+                union(){
+                    translate([-37/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                    translate([-37/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                    translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                    translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                }
+                translate([-37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+                translate([-37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+                translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+                translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            } 
+        }
         
      
 /*
