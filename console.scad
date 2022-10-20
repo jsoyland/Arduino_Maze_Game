@@ -84,6 +84,11 @@ union(){
             cylinder(27.01, 1.5, 1.5, true);
             translate([0, 0, -14.5]) cylinder(2, 2.75, 2.75, true);
         }
+        
+        // Hole for switch
+        translate([-33, 35, 1]){
+            cube([12, 10, 8.5], true);
+        }
  
     }
     
