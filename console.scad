@@ -128,39 +128,22 @@ union(){
             cube([5.01, 44, 4.44], true);
         }
         
-      // Standoffs for circuit boards.  Trying cylinders
+      // Standoffs for circuit board.  Trying cylinders
       circuit_board_standoff_height=6.5;
-      translate([-(64/2)+4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
+      translate([-(24/2)+4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
         difference(){
             union(){
-                translate([-37/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                translate([-37/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([-77/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([-77/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([77/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([77/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
             }
-            translate([-37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([-37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-        }  
-  
-      translate([(64/2)-9, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
-      rotate([0, 0, 90]){ // Need to rotate this side to make it fit the arduino & plug
-            difference(){
-                union(){
-                    translate([-37/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                    translate([-37/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                    translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                    translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                }
-                translate([-37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-                translate([-37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-                translate([37/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-                translate([37/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            } 
-        }
-        
-     
+            translate([-77/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-77/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([77/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([77/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+        }        
+
 /*
     translate([-((110/2)-10), 0, 12.5-(4.94/2)]) 
         difference(){
