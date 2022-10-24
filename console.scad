@@ -90,6 +90,15 @@ union(){
             cube([12, 10, 8.5], true);
         }
         
+        // Hole for USB-C port
+        #translate([55, -16, -5]){ //-5 for testing, will to move up a bit.
+            union(){
+               translate([0, 2.25, 0]) rotate([0, 90, 0]) cylinder(10, 3.5, 3.5, true);  
+               translate([0, -2.25, 0]) rotate([0, 90, 0]) cylinder(10, 3.5, 3.5, true);  
+               cube([10, 4.5, 7], true );           
+            }
+        }
+        
     }
     
     // close off battery compartment, but leave a 2x3mm hole for connector
