@@ -91,7 +91,7 @@ union(){
         }
         
         // Hole for USB-C port
-        #translate([55, -16, -5]){ //-5 for testing, will to move up a bit.
+        translate([55, -16, -5]){ //-5 for testing, will to move up a bit.
             union(){
                translate([0, 2.25, 0]) rotate([0, 90, 0]) cylinder(10, 3.5, 3.5, true);  
                translate([0, -2.25, 0]) rotate([0, 90, 0]) cylinder(10, 3.5, 3.5, true);  
@@ -133,10 +133,10 @@ union(){
       translate([-(24/2)+4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
         difference(){
             union(){
-                translate([-77/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                translate([-77/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                translate([77/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
-                translate([77/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 2, 2, true);
+                translate([-77/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([-77/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([77/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([77/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
             }
             translate([-77/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
             translate([-77/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
@@ -159,10 +159,10 @@ union(){
     translate([0, -50, -(25-7)/2]) {
         difference(){
             union(){
-                translate([20/2, (26/2)-2, 0]) cylinder(thumbstick_standoff_height, 2.5, 2.5, true);
-                translate([-20/2, (26/2)-2, 0]) cylinder(thumbstick_standoff_height, 2.5, 2.5, true);
-                translate([-20/2, -(26/2)-2, 0]) cylinder(thumbstick_standoff_height, 2.5, 2.5, true);
-                translate([20/2, -(26/2)-2, 0]) cylinder(thumbstick_standoff_height, 2.5, 2.5, true);
+                translate([20/2, (26/2)-2, 0]) cylinder(thumbstick_standoff_height, 3.5, 3.5, true);
+                translate([-20/2, (26/2)-2, 0]) cylinder(thumbstick_standoff_height, 3.5, 3.5, true);
+                translate([-20/2, -(26/2)-2, 0]) cylinder(thumbstick_standoff_height, 3.5, 3.5, true);
+                translate([20/2, -(26/2)-2, 0]) cylinder(thumbstick_standoff_height, 3.5, 3.5, true);
             }
             //cube([27, 36, 7], true);    
             translate([20/2, (26/2)-2, 0]) cylinder(thumbstick_standoff_height+.1, 1.5, 1.5, true);
