@@ -87,15 +87,28 @@ union(){
         
         // Hole for switch
         translate([-33, 35, 1]){
-            cube([12, 10, 8.5], true);
+            cube([14, 10, 9.5], true);
         }
         
         // Hole for USB-C port
         translate([55, -16, -5]){ //-5 for testing, will to move up a bit.
             union(){
-               translate([0, 2.25, 0]) rotate([0, 90, 0]) cylinder(10, 3.5, 3.5, true);  
-               translate([0, -2.25, 0]) rotate([0, 90, 0]) cylinder(10, 3.5, 3.5, true);  
-               cube([10, 4.5, 7], true );           
+               //#translate([0, 2.25, 0]) rotate([0, 90, 0]) cylinder(10, 3.5, 3.5, true);  
+               //#translate([0, -2.25, 0]) rotate([0, 90, 0]) cylinder(10, 3.5, 3.5, true);  
+               translate([0, 2.25, 0]) rotate([0, 90, 0]) cylinder(10, 4, 4, true);  
+               translate([0, -2.25, 0]) rotate([0, 90, 0]) cylinder(10, 4, 4, true);               
+               cube([10, 4.5, 8], true );           
+            }
+        }
+        
+        // Hole for USB-C port
+        #translate([55, -10, 1.5]){ 
+            union(){
+               //#translate([0, 2.25, 0]) rotate([0, 90, 0]) cylinder(10, 3.5, 3.5, true);  
+               //#translate([0, -2.25, 0]) rotate([0, 90, 0]) cylinder(10, 3.5, 3.5, true);  
+               translate([0, 2.25, 0]) rotate([0, 90, 0]) cylinder(10, 4, 4, true);  
+               translate([0, -2.25, 0]) rotate([0, 90, 0]) cylinder(10, 4, 4, true);               
+               cube([10, 4.5, 8], true );           
             }
         }
         
@@ -104,7 +117,7 @@ union(){
     // close off battery compartment, but leave a 2x3mm hole for connector
      translate([0, -75, 0]) difference(){
        cube([35, 2, 25], true);
-       translate([-15, 0, -7]) cube([2, 3, 3], true);
+       translate([-15, 0, -7]) rotate([90, 0, 0]) cylinder(4, 2, 2, true);
      }
             
     // Mounting blocks for screen.  
@@ -133,15 +146,15 @@ union(){
       translate([-(24/2)+4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
         difference(){
             union(){
-                translate([-77/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
-                translate([-77/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
-                translate([77/2, 57/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
-                translate([77/2, -57/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([-77/2, 55.5/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([-77/2, -55.5/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([77/2, 55.5/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([77/2, -55.5/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
             }
-            translate([-77/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([-77/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([77/2, 57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([77/2, -57/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-77/2, 55.5/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-77/2, -55.5/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([77/2, 55.5/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([77/2, -55.5/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
         }        
 
 /*
@@ -155,8 +168,8 @@ union(){
 */            
             
     // Mounting block for thumbstick
-    thumbstick_standoff_height=7;
-    translate([0, -50, -(25-7)/2]) {
+    thumbstick_standoff_height=6;
+    translate([0, -50, -(25-thumbstick_standoff_height)/2]) {
         difference(){
             union(){
                 translate([20/2, (26/2)-2, 0]) cylinder(thumbstick_standoff_height, 3.5, 3.5, true);
