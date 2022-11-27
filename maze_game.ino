@@ -21,9 +21,9 @@ int y_pos = 0;
 
 //display is 320x240 so a pixelsize of 8 means we can do 40 x 30 
 
-#define MAZEWIDTH  40*4
-#define MAZEHEIGHT 30*4
-#define PIXELSIZE  2
+#define MAZEWIDTH  320//40*8
+#define MAZEHEIGHT 240//30*8
+#define PIXELSIZE  1
 
 
 void setup() {
@@ -34,9 +34,10 @@ void setup() {
   pinMode(SEL_PIN, INPUT_PULLUP);
   tft.setRotation(1);             // https://learn.adafruit.com/adafruit-gfx-graphics-library/rotating-the-display
   tft.fillScreen(ILI9341_BLACK);
-  drawMaze();
+//  drawMaze();
 }
 
+//https://www.youtube.com/watch?v=eBuFZ2glyvc
 
 void loop() {
   int horz = analogRead(HORZ_PIN);
@@ -46,10 +47,10 @@ void loop() {
   tft.setCursor(10, 100);
   tft.setTextColor(ILI9341_RED, ILI9341_YELLOW);
   tft.setTextSize(3);
-  tft.println("X: " + String(horz) + "    "  );
+  tft.println("X: " + String(x_pos) + "    "  );
   tft.setCursor(10, 200);
   tft.setTextColor(ILI9341_BLUE, ILI9341_YELLOW);
-  tft.println("Y: " + String(vert) + "    ");
+  tft.println("Y: " + String(y_pos) + "    ");
 */
 if ((horz > 600) && (x_pos <= MAZEWIDTH)) {
   x_pos=x_pos + PIXELSIZE;
