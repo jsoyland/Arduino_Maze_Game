@@ -210,9 +210,9 @@ union(){
     
     
 // temporary - cut off back half
-//translate([0, 0, -15]) cube([400, 400, 30], true);
+translate([0, 0, -15]) cube([400, 400, 30], true);
 // temporary - cut off front half
- translate([0, 0, 15]) cube([400, 400, 30], true);
+// translate([0, 0, 15]) cube([400, 400, 30], true);
 
 // Temporary - cut off most of back
 //translate([0, 0, -8]) cube([400, 400, 30], true);
