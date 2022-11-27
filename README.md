@@ -15,12 +15,22 @@ We used a ILI9341 320x240 screen and an Arudino Nano.  Initially it only showed 
 | CS | 10 | 
 | RESET | 3v3 | 
 | DC | 9 | 
-| MOSI | 11 | 
+| SDI(MOSI) | 11 | 
 | SCK | 13|  
 | LED | 3v3 | 
-| MISO | 12 | 
+| SDO(MISO) | 12 | 
+| T_CLK | 13 |
+| T_CS | 8 |
+| T_DIN | 11 |
+| T_DO | 12 |
+| T_IRQ | not connected |
 
-We aren't using any of the touch capabilities here, though it may be a good idea to go ahead and wire those up too.  TBD.
+We aren't using any of the touch capabilities here, though I went ahead and wired it up.  I don't totally understand it but Arduno has an ["SPI" interface](https://www.arduino.cc/reference/en/language/functions/communication/spi/) that the touchscreen and display devices both use.  The Output/Input/Clock pins are shared between the two peripherals, which the Chip Select is different (here it's pins 10 and 8).
 
-Also wired up a joystick to control the maze.
-
+Also wired up a joystick to control the maze:
+| Thumbstick | Arduino |
+| SW | 2 |
+| VRY | A0 |
+| VRX | A1 |
+| +5V | 5V |
+| GND | GND |
