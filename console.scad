@@ -92,7 +92,7 @@ union(){
         }
         
         // Hole for USB-C port
-        translate([55, -10, 1.5]){ 
+        translate([55, 15, 1.5]){ 
             union(){
                //#translate([0, 2.25, 0]) rotate([0, 90, 0]) cylinder(10, 3.5, 3.5, true);  
                //#translate([0, -2.25, 0]) rotate([0, 90, 0]) cylinder(10, 3.5, 3.5, true);  
