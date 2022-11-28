@@ -1,6 +1,7 @@
 // Higher definition curves
 $fs = 0.01;
 
+
 difference(){//temporary - cut off back half
 
 union(){
@@ -132,18 +133,20 @@ union(){
         
       // Standoffs for circuit board.  Trying cylinders
       circuit_board_standoff_height=6.5;
-      translate([-(24/2)+4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
+      translate([-(19/2)+4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
         difference(){
             union(){
-                translate([-77/2, 55.5/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
-                translate([-77/2, -55.5/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
-                translate([77/2, 55.5/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
-                translate([77/2, -55.5/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([-80/2, 52/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([-80/2, -52/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([-80/2 + 32.38, -52/2 + 13.97, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([80/2, 52/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([80/2, -52/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
             }
-            translate([-77/2, 55.5/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([-77/2, -55.5/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([77/2, 55.5/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([77/2, -55.5/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-80/2, 52/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-80/2, -52/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-80/2 + 32.38, -52/2 + 13.97, 0]) cylinder(circuit_board_standoff_height+.1, 1, 1, true);
+            translate([80/2, 52/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([80/2, -52/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
         }        
 
 /*
@@ -210,9 +213,9 @@ union(){
     
     
 // temporary - cut off back half
-translate([0, 0, -15]) cube([400, 400, 30], true);
+//translate([0, 0, -15]) cube([400, 400, 30], true);
 // temporary - cut off front half
-// translate([0, 0, 15]) cube([400, 400, 30], true);
+ translate([0, 0, 15]) cube([400, 400, 30], true);
 
 // Temporary - cut off most of back
 //translate([0, 0, -8]) cube([400, 400, 30], true);
@@ -228,7 +231,6 @@ translate([0, 0, -15]) cube([400, 400, 30], true);
 
 
 }
-
 
 
 // temporary - battery
