@@ -9,9 +9,9 @@ Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC);
 #define DATA_PIN  11
 #define CS_PIN    10
 
-#define VERT_PIN A0
-#define HORZ_PIN A1
-#define SEL_PIN  2
+#define VERT_PIN A1
+#define HORZ_PIN A0
+#define SEL_PIN  0 // Was originally D2 but I made a mistake on the PCB.  In a stroke of luck D0 works.
 
 int x = 0;
 int y = 0;
@@ -32,7 +32,7 @@ void setup() {
   pinMode(VERT_PIN, INPUT);
   pinMode(HORZ_PIN, INPUT);
   pinMode(SEL_PIN, INPUT_PULLUP);
-  tft.setRotation(1);             // https://learn.adafruit.com/adafruit-gfx-graphics-library/rotating-the-display
+  tft.setRotation(3);             // https://learn.adafruit.com/adafruit-gfx-graphics-library/rotating-the-display
   tft.fillScreen(ILI9341_BLACK);
 //  drawMaze();
 }
@@ -47,21 +47,22 @@ void loop() {
   tft.setCursor(10, 100);
   tft.setTextColor(ILI9341_RED, ILI9341_YELLOW);
   tft.setTextSize(3);
-  tft.println("X: " + String(x_pos) + "    "  );
+  tft.println("X: " + String(x_pos) + "    "  + "\n horz: " + String(horz) + "    ");
   tft.setCursor(10, 200);
   tft.setTextColor(ILI9341_BLUE, ILI9341_YELLOW);
-  tft.println("Y: " + String(y_pos) + "    ");
+  tft.println("Y: " + String(y_pos) + "    " + "\n vert: " + String(vert) + "    ");
 */
-if ((horz > 600) && (x_pos <= MAZEWIDTH)) {
-  x_pos=x_pos + PIXELSIZE;
+
+if ((horz > 550) && (x_pos >= 0)) {
+  x_pos=x_pos - PIXELSIZE;
 }
-if ((horz < 400) && (x_pos >= 0)) {
-  x_pos = x_pos - PIXELSIZE;
+if ((horz < 450) && (x_pos <= MAZEWIDTH)) {
+  x_pos = x_pos + PIXELSIZE;
 }
-if ((vert > 600) && (y_pos <= MAZEHEIGHT)){
+if ((vert > 550) && (y_pos <= MAZEHEIGHT)){
   y_pos=y_pos + PIXELSIZE;
 }
-if ((vert < 400) && (y_pos >= 0)){
+if ((vert < 450) && (y_pos >= 0)){
   y_pos = y_pos - PIXELSIZE;
 }
 
