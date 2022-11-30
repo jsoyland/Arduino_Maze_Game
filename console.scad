@@ -136,17 +136,17 @@ union(){
       translate([-(17/2)+4, 0, (-(25/2)+(circuit_board_standoff_height/2))]) 
         difference(){
             union(){
-                translate([-82/2, 52/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
-                translate([-82/2, -52/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
-                translate([-82/2 + 32.38, -52/2 + 13.97, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
-                translate([82/2, 52/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
-                translate([82/2, -52/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([-82/2, 53/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([-82/2, -53/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([-82/2 + 33.38, -52/2 + 13.97, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([82/2, 53/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
+                translate([82/2, -53/2, 0]) cylinder(circuit_board_standoff_height, 3, 3, true);
             }
-            translate([-82/2, 52/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([-82/2, -52/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([-82/2 + 32.38, -52/2 + 13.97, 0]) cylinder(circuit_board_standoff_height+.1, 1, 1, true);
-            translate([82/2, 52/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
-            translate([82/2, -52/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-82/2, 53/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-82/2, -53/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([-82/2 + 33.38, -52/2 + 13.97, 0]) cylinder(circuit_board_standoff_height+.1, 1, 1, true);
+            translate([82/2, 53/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
+            translate([82/2, -53/2, 0]) cylinder(circuit_board_standoff_height+0.1, 1, 1, true);
         }        
 
 /*
