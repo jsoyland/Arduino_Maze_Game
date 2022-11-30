@@ -180,32 +180,42 @@ union(){
     }
     
     // Body Screws - Whatever it's called, the bits that hold the halves together.
+    
+    //lower-left handle
     translate([-30/2, -130, 0]) difference(){
         cube([5, 5, 24.5], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
+    
+    //lower-right handle
     translate([30/2, -130, 0]) difference(){
         cube([5, 5, 25], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
   
+    //upper-right display
     translate([102/2, 60/2, 0]) difference(){
         cube([5, 5, 24.5], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     
+    //lower-right display
     translate([102/2, -60/2, 0]) difference(){
         cube([5, 5, 25], true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     
+    //upper-left display
     translate([-102/2, 60/2, 0]) difference(){
-        cube([5, 5, 25], true);
+        //cube([5, 5, 25], true);
+        cylinder(25, 2.5, 2.5, true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     
+    //lower-left display
     translate([-102/2, -60/2, 0]) difference(){
-        cube([5, 5, 25], true);
+        //cube([5, 5, 25], true);
+        cylinder(25, 2.5, 2.5, true);
         cylinder(26.1, 1.5, 1.5, true);
     }
     
